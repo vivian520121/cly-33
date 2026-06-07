@@ -2,7 +2,7 @@ import type { FormatAction } from '@/types'
 
 export const textFormatter = {
   compressSpaces(text: string): string {
-    return text.replace(/\s+/g, ' ').trim()
+    return text.replace(/[\s\u3000\u00A0]+/g, ' ').trim()
   },
 
   toUpperCase(text: string): string {
