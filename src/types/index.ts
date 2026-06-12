@@ -2,7 +2,7 @@ export interface HistoryItem {
   id: string
   originalText: string
   convertedText: string
-  type: 'font' | 'symbol' | 'format'
+  type: 'font' | 'symbol' | 'format' | 'pinyin'
   timestamp: number
 }
 

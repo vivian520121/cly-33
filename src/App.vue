@@ -6,6 +6,7 @@ import TextInput from './components/TextInput.vue'
 import FontConverter from './components/FontConverter.vue'
 import SymbolDecorator from './components/SymbolDecorator.vue'
 import FormatProcessor from './components/FormatProcessor.vue'
+import PinyinAnnotator from './components/PinyinAnnotator.vue'
 import HistoryPanel from './components/HistoryPanel.vue'
 import ToastContainer from './components/ToastContainer.vue'
 
@@ -65,6 +66,8 @@ const handleClear = () => {
           
           <FontConverter :input-text="inputText" />
           
+          <PinyinAnnotator :input-text="inputText" />
+          
           <SymbolDecorator :input-text="inputText" />
           
           <FormatProcessor
@@ -85,6 +88,14 @@ const handleClear = () => {
               <li class="flex items-start gap-2">
                 <span class="text-primary-500 mt-0.5">•</span>
                 输入文字后自动生成各种样式
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary-500 mt-0.5">•</span>
+                拼音标注支持自定义字号和颜色
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-primary-500 mt-0.5">•</span>
+                点击汉字可手动修改拼音
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-primary-500 mt-0.5">•</span>

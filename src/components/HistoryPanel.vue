@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { History, Trash2, Copy, X, ChevronDown, ChevronUp, Clock, Type, Sparkles, AlignLeft } from 'lucide-vue-next'
+import { History, Trash2, Copy, X, ChevronDown, ChevronUp, Clock, Type, Sparkles, AlignLeft, BookOpen } from 'lucide-vue-next'
 import { useHistory } from '@/composables/useHistory'
 import { useClipboard } from '@/composables/useClipboard'
 import { useToast } from '@/composables/useToast'
@@ -18,13 +18,15 @@ const isExpanded = ref(true)
 const typeIcons: Record<string, any> = {
   font: Type,
   symbol: Sparkles,
-  format: AlignLeft
+  format: AlignLeft,
+  pinyin: BookOpen
 }
 
 const typeLabels: Record<string, string> = {
   font: '字体',
   symbol: '装饰',
-  format: '格式'
+  format: '格式',
+  pinyin: '拼音'
 }
 
 const handleCopy = async (text: string) => {
@@ -104,6 +106,7 @@ const handleClearAll = () => {
                   'inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium rounded-full',
                   item.type === 'font' ? 'bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400' :
                   item.type === 'symbol' ? 'bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400' :
+                  item.type === 'pinyin' ? 'bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400' :
                   'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400'
                 ]"
               >

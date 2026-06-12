@@ -443,6 +443,8 @@ function convertToReverse(text: string): string {
   return mapped.split('').reverse().join('')
 }
 
+export { pinyinMap }
+
 export const fontConverter = {
   convert(text: string, style: FontStyle): string {
     if (!text) return ''
